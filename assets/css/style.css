@@ -1,0 +1,38 @@
+#citySearch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  
+  #pastSearch {
+    margin-top: 10px;
+  }
+  
+  #searchButton {
+    margin-top: 10px;
+  }
+  
+  #currentWeatherData{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  #currentWeather {
+    margin-top: 10px;
+  }
+  
+  #current-weather-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  #forecastRow{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
