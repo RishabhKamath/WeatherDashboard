@@ -1,15 +1,14 @@
 const APIKey = '023a36acc8a97b00102fb10666b3912c'
-const today = moment().format('M/D/YYYY')
 
 let citySearchInput = document.getElementById('cityInput')
 let citySearch = ''
 let searchButton = document.getElementById('searchButton')
 let sameDayURL = ''
 
-searchButton.addEventListener('click', function(){
+searchButton.addEventListener('click', function () {
     citySearch = cityInput.value
 
-    sameDayURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + citySearch + '&appid=' + APIKey + '&units=imperial'
+    sameDayURL = 'http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit={limit}&appid={API key}' + citySearch + '&appid=' + APIKey + '&units=imperial'
 
     console.log(citySearch)
 
