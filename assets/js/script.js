@@ -33,4 +33,20 @@ function storeSearchInput(city) {
     for (var i = 0; i < searchHistory.length; i++) {
       $("#search-history").append("<li>" + searchHistory[i] + "</li>");
     }
-  }
+  };
+
+$(document).ready(function () {
+    $("#searchButton").click(function () {
+        var city = $("#cityInput").val();
+        var apiKey = "023a36acc8a97b00102fb10666b3912c";
+        var requestUrl1 = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+        $.get(requestUrl1, function (data) {
+            var lat = data.coord.lat;
+            var lon = data.coord.lon;
+            var requestUrl2 = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+            $.get(requestUrl2, function (data) {
+                console.log(data);
+            });
+        });
+    }); 
+})
