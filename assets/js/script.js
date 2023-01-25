@@ -1,5 +1,3 @@
-const APIKey = '023a36acc8a97b00102fb10666b3912c'
-
 // Get request to return lat and lon from the city search input
 $(document).ready(function () {
     $("#searchButton").click(function () {
@@ -35,6 +33,7 @@ function storeSearchInput(city) {
     }
   };
 
+  //pass lat and lon to 5 day weather api
 $(document).ready(function () {
     $("#searchButton").click(function () {
         var city = $("#cityInput").val();
@@ -46,6 +45,25 @@ $(document).ready(function () {
             var requestUrl2 = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
             $.get(requestUrl2, function (data) {
                 console.log(data);
+
+                function displayCurrentWeatherData(data) {
+                    var city = data.name;
+                    var temperature = (data.main.temp - 273.15) * 9/5 + 32;
+                    var windSpeed = data.wind.speed;
+                    var humidity = data.main.humidity;
+                    var icon = data.weather[0].icon;
+                
+                    // Display weather data on page
+                    $("#city-name").text(city);
+                    $("#date").text(date);
+                    $("#icon").attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+                    $("#temperature").text(temperature.toFixed(2));
+                    $("#humidity").text(humidity);
+                    $("#wind-speed").text(windSpeed);
+                }
+                $.get(requestUrl2, function(data) {
+                    displayCurrentWeatherData(data);
+                });
             });
         });
     }); 
