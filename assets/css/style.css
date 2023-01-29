@@ -11,6 +11,10 @@
   #searchButton {
     margin-top: 10px;
   }
+
+  #weather-data-container{
+
+  }
   
   #currentWeatherData{
     display: flex;
@@ -21,6 +25,7 @@
   
   #currentWeather {
     margin-top: 10px;
+
   }
   
   #current-weather-container{
@@ -35,4 +40,8 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
+  }
+
+  #search-history-container{
+    padding-right: 15%;
   }
